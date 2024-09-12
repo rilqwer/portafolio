@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #1d1f27, #0f2027);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 0 10px; /* Pequeño margen para evitar que toque los bordes en móviles */
+}
+
+header {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #00d9ff;
+    text-shadow: 0 2px 10px rgba(0, 217, 255, 0.4);
+    animation: pulse 2s infinite alternate;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin-top: 10px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.url-shortener {
+    background: rgba(0, 217, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.url-shortener:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 217, 255, 0.4);
+}
+
+.url-shortener h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00d9ff;
+    text-shadow: 0 2px 5px rgba(0, 217, 255, 0.3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: 2px solid #00d9ff;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    border-color: #00b3cc;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+input[type="text"]::placeholder {
+    color: #a0a0a0;
+}
+
+button.btn {
+    background: #00d9ff;
+    border: none;
+    padding: 12px;
+    color: #1d1f27;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
+}
+
+button.btn:hover {
+    background: #00b3cc;
+    transform: translateY(-3px);
+}
+
+#result {
+    margin-top: 20px;
+}
+
+#short-url {
+    font-size: 1.5rem;
+    color: #00d9ff;
+    word-wrap: break-word;
+    text-shadow: 0 1px 5px rgba(0, 217, 255, 0.3);
+}
+
+footer {
+    background: #0f2027;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+footer p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 217, 255, 0.5), 0 0 20px rgba(0, 217, 255, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(0, 217, 255, 0.8), 0 0 30px rgba(0, 217, 255, 0.7);
+    }
+}
+
+/* Media Queries para pantallas medianas y tablets */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    .url-shortener h2 {
+        font-size: 1.6rem;
+    }
+
+    main {
+        padding: 30px;
+    }
+
+    button.btn {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Media Queries para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .url-shortener h2 {
+        font-size: 1.4rem;
+    }
+
+    input[type="text"] {
+        font-size: 1rem;
+    }
+
+    button.btn {
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Media Queries para pantallas muy pequeñas (smartphones) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .url-shortener h2 {
+        font-size: 1.3rem;
+    }
+
+    input[type="text"] {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    button.btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    #result {
+        font-size: 1.2rem;
+    }
+
+    footer p {
+        font-size: 0.7rem;
+    }
+
+    .useful-links {
+        padding: 20px;
+    }
+
+    .useful-links h2 {
+        font-size: 1.3rem;
+    }
+
+    .useful-links ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilos para la sección de Enlaces útiles */
+.useful-links {
+    margin-top: 50px;
+    background: rgba(0, 217, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.useful-links h2 {
+    font-size: 1.8rem;
+    color: #00d9ff;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 5px rgba(0, 217, 255, 0.3);
+}
+
+.useful-links p {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin-bottom: 20px;
+}
+
+.useful-links ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.useful-links ul li {
+    margin-bottom: 10px;
+}
+
+.useful-links ul li a {
+    font-size: 1.1rem;
+    color: #00d9ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.useful-links ul li a:hover {
+    color: #00b3cc;
+}
+
+/* Mejora en el hover de enlaces para SEO */
+a:focus, a:hover {
+    outline: none;
+    text-decoration: underline;
+}

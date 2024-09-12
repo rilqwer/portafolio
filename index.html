@@ -3,220 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acortador de URL Futurista</title>
+    <meta name="description" content="CupURL - Acortador de URLs gratuito, rápido y eficiente. Acorta tus enlaces con facilidad y personalízalos con alias únicos.">
+    <meta name="keywords" content="acortador de URLs, acortar enlaces, URL shortener, gratis, rápido, eficiente, alias, personalizar enlaces">
+    <meta name="author" content="Cup">
+    
+    <!-- SEO - Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CupURL - Acortador de URLs Gratis y Rápido",
+      "url": "https://www.cupurl.com",
+      "description": "Acorta URLs de forma rápida y gratuita con CupURL. Personaliza tus enlaces con alias únicos.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Cup"
+      }
+    }
+    </script>
+
+    <title>CupURL - Acortador de URLs Gratis y Rápido</title>
+
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Orbitron', sans-serif;
-            background: #1d1f27;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #00d9ff;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-        }
-
-        .url-shortener {
-            background: rgba(0, 217, 255, 0.1);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .url-shortener h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #00d9ff;
-        }
-
-        form {
-            display: flex;
-            gap: 10px;
-        }
-
-        input[type="text"] {
-            flex: 1;
-            padding: 10px;
-            border: 2px solid #00d9ff;
-            border-radius: 5px;
-            background: transparent;
-            color: #fff;
-            font-size: 1.1rem;
-        }
-
-        input[type="text"]::placeholder {
-            color: #a0a0a0;
-        }
-
-        button.btn {
-            background: #00d9ff;
-            border: none;
-            padding: 10px 20px;
-            color: #1d1f27;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button.btn:hover {
-            background: #00b3cc;
-        }
-
-        #result {
-            margin-top: 20px;
-        }
-
-        #short-url {
-            font-size: 1.5rem;
-            color: #00d9ff;
-            word-wrap: break-word;
-        }
-
-        footer {
-            background: #0f2027;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer p {
-            color: #a0a0a0;
-            font-size: 0.9rem;
-        }
-
-        /* Media Queries para pantallas pequeñas */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            .url-shortener h2 {
-                font-size: 1.5rem;
-            }
-
-            input[type="text"] {
-                font-size: 1rem;
-            }
-
-            button.btn {
-                font-size: 1rem;
-                padding: 10px 15px;
-            }
-
-            main {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            header p {
-                font-size: 0.9rem;
-            }
-
-            form {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            input[type="text"] {
-                width: 100%;
-                font-size: 1rem;
-            }
-
-            button.btn {
-                width: 100%;
-                font-size: 1rem;
-            }
-
-            .url-shortener h2 {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Futuristic URL Shortener</h1>
-            <p>Acorta tus URLs rápidamente y con estilo</p>
+            <h1>CupURL - Acorta tus Enlaces con Rapidez</h1>
+            <p>Acorta tus URLs rápidamente, gratis y con estilo. ¡Agrega alias personalizados!</p>
         </div>
     </header>
 
     <main>
         <section class="url-shortener">
             <div class="container">
-                <h2>Introduce tu URL</h2>
+                <h2>Introduce tu URL para acortar</h2>
+                <p>Personaliza tu enlace con un alias único o deja que lo generemos por ti.</p>
+
                 <form id="shorten-form">
-                    <input type="text" placeholder="https://ejemplo.com" id="url-input" required>
+                    <input type="text" placeholder="https://ejemplo.com" id="url-input" required aria-label="Introduce una URL">
+                    <input type="text" placeholder="Alias (opcional)" id="alias-input" aria-label="Introduce un alias opcional">
                     <button type="submit" class="btn">Acortar</button>
                 </form>
+
                 <div id="result">
                     <p id="short-url"></p>
+                    <button id="copy-btn" class="btn" style="display: none;">Copiar URL</button>
                 </div>
+
+                <div id="counter" style="margin-top: 20px; font-size: 1.2rem; color: #00d9ff;"></div>
             </div>
+        </section>
+
+        <!-- Otras herramientas -->
+        <section class="useful-links">
+            <h2>Enlaces útiles</h2>
+            <p>Encuentra más herramientas para mejorar tu experiencia:</p>
+            <ul>
+                <li><a href="https://www.is.gd/" target="_blank">Acortador is.gd</a></li>
+                <li><a href="https://tinyurl.com/app" target="_blank">Acortador TinyURL</a></li>
+            </ul>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Futuristic URL Shortener. Todos los derechos reservados.</p>
+            <p>&copy; 2024 CupURL - Todos los derechos reservados. Desarrollado por Cup.</p>
         </div>
     </footer>
 
-    <script>
-        document.getElementById('shorten-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const urlInput = document.getElementById('url-input').value;
-            
-            if (urlInput) {
-                // Aquí puedes integrar la funcionalidad de acortar URLs
-                const shortenedUrl = "https://short.url/12345";  // Ejemplo de URL acortada
-                document.getElementById('short-url').textContent = `Tu URL acortada: ${shortenedUrl}`;
-            }
-        });
-    </script>
+    <!-- Enlace a JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
